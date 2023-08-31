@@ -5,7 +5,7 @@ double f(double x){
     return pow(2, x) + x - 4;
 }
 
-double tangent(double epsilon, double a, double b){
+double secant(double epsilon, double a, double b){
     double x = a - ((b - a) * f(a)) / (f(b) - f(a));
 
     while (fabs(f(x)) > epsilon) {
@@ -23,7 +23,7 @@ double tangent(double epsilon, double a, double b){
 int main(){
     double a = 1, b = 2; // Khoảng nghiệm a, b
     double epsilon = pow(10, -9);
-    double x = tangent(epsilon, a, b);
+    double x = secant(epsilon, a, b);
     printf("Nghiem xap xi x la: %.15lf\n", x);
     return 0;
 }
